@@ -43,25 +43,53 @@
                             <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <div class="myform-bottom">
-                            <div class="form-group ml-3">
+                    <div class="myform-bottom"> 
+                            <div class="form-group ml-3" >
+                                   <div style="margin-right:60px">
+                                <asp:TextBox ID="nametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="name..."></asp:TextBox>
+                               </div>
+
                               <%--  <input type="text"  name="form-firtsname"  placeholder="Name..."  class="form-control" id="name">--%>
+
+
                             </div>
                             <div class="form-group ">
+
+                                  <div style="margin-right:60px">
+                                     
+                                <asp:TextBox ID="lastnametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="Lastname..."></asp:TextBox>
+                                        
+                               </div>
+                              
                               <%--  <input type="text" name="form-lastname" placeholder="Lastname..." class="form-control" id="Lastname">--%>
                             </div>
                             <div class="form-group">
                               <%--  <input type="text" name="form-cedula" placeholder="ced..." class="form-control" id="cedula">--%>
+                                <div style="margin-right:60px">
+                                   
+                                <asp:TextBox ID="idtxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="id...."></asp:TextBox>
+                                        
+                               </div>
                             </div>
+
+
 
                             <div class="form-group">
                                <%-- <input type="date" name="form-birthdate"  class="form-control" id="birthday-">--%>
                             </div>
                             <div class="form-group">
+
+                                  <div style="margin-right:60px">
+                                <asp:TextBox ID="TextBox3" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>
+                               </div>
                                <%-- <input type="text" name="form-email" placeholder="Email..." class="form-control" id="email">--%>
                             </div>
 
                             <div class="form-group">
+
+                                  <div style="margin-right:60px">
+                                <asp:TextBox ID="TextBox4" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>
+                               </div>
                                <%-- <input type="text" name="form-tel" placeholder="phone number..." class="form-control" id="phone"--%>
                             </div>
                             <div class="col">
@@ -104,6 +132,7 @@
                                 </label>
                             </div>
                              <hr />
+                        </div>
 
                      <%--   <script type  ="text/javascript">
                             function Mifucion() {

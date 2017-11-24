@@ -84,7 +84,7 @@ textarea.form-control {
     font-size: 16px;
     font-weight: 300;
     line-height: 50px;
-    width: 99%;
+    margin-left: 0px;
 }
 input[type="text"]:focus, 
 input[type="password"]:focus, 
