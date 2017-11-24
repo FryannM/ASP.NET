@@ -12,7 +12,10 @@ using System.Web.Script;
 namespace FormularioWEb
 {
     public partial class WebForm1 : System.Web.UI.Page
+
     {
+
+        SqlConnection sqlCon =  new SqlConnection(@"Data Source=FRYANNM\SQLEXPRESS;Initial Catalog=WebServer;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -27,11 +30,14 @@ namespace FormularioWEb
         protected void Button1_Click(object sender, EventArgs e)
         {
 
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+                sqlCon.Open();
 
-            // Page.ClientScript.RegisterStartupScript(GetType(), "script", "Validacion();", true);
+            SqlCommand cmd = new SqlCommand("Insert into ",sqlCon);
+
 
             ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "Validar()", true);
-            //ClientScript.RegisterStartupScript(GetType(), "Mostrar","Validacion();", true);
+          
         }
 
         public void ConectBD()
