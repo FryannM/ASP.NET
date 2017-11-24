@@ -44,25 +44,25 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                            <div class="form-group">
-                                <input type="text"  name="form-firtsname"  placeholder="Name..."  class="form-control" id="name">
+                            <div class="form-group ml-3">
+                              <%--  <input type="text"  name="form-firtsname"  placeholder="Name..."  class="form-control" id="name">--%>
+                            </div>
+                            <div class="form-group ">
+                              <%--  <input type="text" name="form-lastname" placeholder="Lastname..." class="form-control" id="Lastname">--%>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="form-lastname" placeholder="Lastname..." class="form-control" id="Lastname">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="form-cedula" placeholder="ced..." class="form-control" id="cedula">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="date" name="form-birthdate"  class="form-control" id="birthday-">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="form-email" placeholder="Email..." class="form-control" id="email">
+                              <%--  <input type="text" name="form-cedula" placeholder="ced..." class="form-control" id="cedula">--%>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="form-tel" placeholder="phone number..." class="form-control" id="phone">
+                               <%-- <input type="date" name="form-birthdate"  class="form-control" id="birthday-">--%>
+                            </div>
+                            <div class="form-group">
+                               <%-- <input type="text" name="form-email" placeholder="Email..." class="form-control" id="email">--%>
+                            </div>
+
+                            <div class="form-group">
+                               <%-- <input type="text" name="form-tel" placeholder="phone number..." class="form-control" id="phone"--%>
                             </div>
                             <div class="col">
 
@@ -149,7 +149,7 @@
                             }
                         </script>
                       <button type="submit" value="" onclick="Validar()" class="mybtn" >
-                          <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Width="251px" BackColor="#33CCCC" UseSubmitBehavior="False" Visible="False" />
+                        
                           Check in</button>
                            
 

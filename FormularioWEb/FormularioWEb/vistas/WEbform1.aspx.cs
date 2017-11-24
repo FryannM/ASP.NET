@@ -32,11 +32,17 @@ namespace FormularioWEb
 
             if (sqlCon.State == System.Data.ConnectionState.Closed)
                 sqlCon.Open();
+           
 
-            SqlCommand cmd = new SqlCommand("Insert into ",sqlCon);
+            SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+           // cmd.Parameters.AddWithValue("@idpersona",hfidpersona.Value);
+           // cmd.Parameters.("@name",GetType(),"","Name",true);
+  
 
 
             ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "Validar()", true);
+           
           
         }
 
