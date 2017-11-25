@@ -20,56 +20,48 @@ namespace FormularioWEb
         {
 
         }
-
-        public static string CnnVal(string name)
-        {
-            return WebConfigurationManager.ConnectionStrings[name].ConnectionString;
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-
-            if (sqlCon.State == System.Data.ConnectionState.Closed)
-                sqlCon.Open();
-           
-
-            SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            // cmd.Parameters.AddWithValue("@idpersona",hfidpersona.Value);
-            cmd.Parameters.AddWithValue("@name",nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@lastname", nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@date", nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@email", nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@phone", nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@country", nametxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@career", nametxt.Text.Trim());
-
-
-
-
-            ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "Validar()", true);
-           
-          
-        }
-
-        public void ConectBD()
-        {
-            SqlConnection con = new SqlConnection(
-
-               WebConfigurationManager.ConnectionStrings["WebServer"].ConnectionString);
-            con.Open();
-            if (con.State == System.Data.ConnectionState.Open)
-            {
-                DisplayMessage(this, "Successfull");
-            }
-
-        }
         static public void DisplayMessage(Control page, string msg)
         {
             string myScript = String.Format("alert('{0}')", msg);
 
             ScriptManager.RegisterStartupScript(page, page.GetType(), "Myscript", myScript, true);
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            int id = 0;
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+                sqlCon.Open();
+
+
+            SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+         
+            cmd.Parameters.AddWithValue("@idpersona",id);
+            cmd.Parameters.AddWithValue("@name", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@lastname", lastnametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@cedula", idtxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@dateT", datetxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@email", emailtxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@phone", phonetxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@country", paislist.Text.Trim());
+            cmd.Parameters.AddWithValue("@career", carreer.Text.Trim());
+            cmd.ExecuteNonQuery();
+
+            sqlCon.Close();
+            if (id !=0 )
+            {
+                ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "MsgSuccessul()", true);
+
+            }
+
+         
+
+
+
+
+
+
         }
     }
 }

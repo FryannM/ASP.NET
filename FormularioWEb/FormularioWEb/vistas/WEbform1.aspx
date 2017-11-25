@@ -45,61 +45,65 @@
                     </div>
                     <div class="myform-bottom"> 
                             <div class="form-group ml-3  ">
-                                <%--   <div style="margin-right:60px">--%>
+                               
                                 <asp:TextBox ID="nametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="name..." ></asp:TextBox>
-                              <%-- </div>--%>
-                              <%--  <input type="text"  name="form-firtsname"  placeholder="Name..."  class="form-control" id="name">--%>
+
                             </div>
                             <div class="form-group " style="margin-top:0px">
-                                 <%-- <div style="margin-right:60px">--%>     
+                                  
                                 <asp:TextBox ID="lastnametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="Lastname..."></asp:TextBox>
-                                        
-                             <%--  </div>--%> 
+                            
                             </div>
                             <div class="form-group">
                         
-                              <%--  <div style="margin-right:60px">--%>      
+                            
                                 <asp:TextBox ID="idtxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="id...."></asp:TextBox>            
-                             <%--  </div>--%>
+                            
                             </div>
                             <div class="form-group">
-                                <%--<div style="margin-right:60px">--%>
+                              
                                    
                                 <asp:TextBox ID="datetxt"  type ="date" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>              
-                               <%--</div>--%>
+                              
                              
                             </div>
                             <div class="form-group">
 
-                               <%--   <div style="margin-right:60px">--%>
+                              
                                 <asp:TextBox ID="emailtxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="email..."></asp:TextBox>
-                              <%-- </div>--%>
+                            
                             </div>
 
                             <div class="form-group" >
-                                <%--  <div style="margin-right:60px">--%>
-                                <asp:TextBox ID="TextBox4" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>
-                               <%--</div>--%>
+                              
+                                <asp:TextBox ID="phonetxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>
+                            
                             </div>
-                            <div class="col">     
-                                    <select name="pais" id="pais" class="form-control  ">
-                                        <option value="SEL">Choose Contry</option>
-                                        <option value="DR">Dominican Republic</option>
-                                        <option value="UK">United Kingdom</option>
-                                        <option value="US">United States</option>
-                                        <option value="SW">Swizeland </option>
-  
-                                    </select>
+                        
+
+                            <div class="col">   
+                                <asp:DropDownList ID="paislist" runat="server"  class="form-control">
+                                   <asp:ListItem Text="Choose Contry" Value="SEL" />
+                                     <asp:ListItem Text="Dominican Republic" Value="Dominican Republic" />
+                                     <asp:ListItem Text="United Kingdom" Value="United Kingdom" />
+                                     <asp:ListItem Text="United States" Value="United States" />
+                                    <asp:ListItem Text="Swizeland" Value="Swizeland" />
+                           
+
+                                </asp:DropDownList> 
+     
                                     <div style="margin-top:15px"></div>
 
-                                    <select name="profesion" id="profesion" class="form-control mt-3">
-                                        <option value="none">Choose Career</option>
-                                        <option value="Sf">Software Developer</option>
-                                        <option value="NT">Networks</option>
-                                        <option value="DB">Data Base</option>
-                                        <option value="SW">Swizeland </option>
-                                    </select>
-                                    
+                                   <asp:DropDownList ID="carreer" runat="server"  class="form-control">
+
+                                   <asp:ListItem Text="Choose Career" Value="SEL" />
+                                     <asp:ListItem Text="Software Developer" Value="Software Developer" />
+                                     <asp:ListItem Text="Networks" Value="Networks" />
+                                     <asp:ListItem Text="Data Base" Value="Data Bas" />
+                                    <asp:ListItem Text="Full Stack Web Developer" Value="Full Stack Web Developer" />
+   
+                                </asp:DropDownList> 
+        
                                     </div>
                             <h4>Sexo </h4>
                             <hr />
@@ -116,15 +120,16 @@
                                 </label>
                             </div>
                              <hr />
-                        </div>
-                     <%--   <script type  ="text/javascript">
-                            function Mifucion() {
-                                alert("Probando esta mierda");
-                            
-                            }
-                        </script>--%>
+                         
+                          <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />
+                         <%-- <button type="submit" value="" onclick="Validar()" class="mybtn" ></button>--%>
 
+                        </div>
+                   
+                     
                         <script type="text/javascript">
+
+
                             function Validar() {
 
                                 // Expresion regular para  validar que el correo sea valido donde /\w+ = texto +@ el arroba
@@ -159,10 +164,36 @@
                                     }
 
                             }
+
+
+                            function MsgSuccessul()
+                            {
+                                if (!alertify.myAlert) {
+                                    //define a new dialog
+                                    alertify.dialog('myAlert', function () {
+                                        return {
+                                            main: function (message) {
+                                                this.message = message;
+                                            },
+                                            setup: function () {
+                                                return {
+                                                    buttons: [{ text: "cool!", key: 27/*Esc*/ }],
+                                                    focus: { element: 0 }
+                                                };
+                                            },
+                                            prepare: function () {
+                                                this.setContent(this.message);
+                                            }
+                                        }
+                                    });
+                                }
+                                //launch it.
+                                alertify.myAlert("Saving Successully");
+                            }
                         </script>
-                      <button type="submit" value="" onclick="Validar()" class="mybtn" >
-                        
-                          Check in</button>
+                     
+                       
+                          
                            
 
                 </div>
@@ -185,7 +216,7 @@
                 </div>
             </div>
         </div>
-      </div>
+    
 
     <!-- Enlazamos el js de Bootstrap, y otros plugins que usemos siempre al final antes de cerrar el body -->
      
