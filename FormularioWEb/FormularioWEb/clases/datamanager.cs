@@ -12,8 +12,8 @@ using System.Configuration;
 
 
 namespace CtrInscripcion.clases
-{
-    class datamanager
+{   
+     public class datamanager
     {
 
         public static string cadenadeconexion

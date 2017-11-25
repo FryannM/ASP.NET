@@ -12,8 +12,19 @@ namespace FormularioWEb.clases
 {
     public class Util: WebForm1
     {
+        public int idpersona { get; set; }
+        public string name { get; set; }
+        public string lastname { get; set; }
+        public string cedula { get; set; }
+        public int dateT { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string country { get; set; }
+        public string career { get; set; }
 
-         public void Clear()
+
+
+        public void Clear()
         {
             nametxt.Text = "";
             lastnametxt.Text = "";
@@ -29,32 +40,45 @@ namespace FormularioWEb.clases
 
         public int crearDatos()
         {
-           int  idmateria = 0;
+          int  idpersona = 0;
 
             if (CtrInscripcion.clases.datamanager.ConexionAbrir())
             {
 
                 // Preparamos consulta pra la actualización
-                SqlCommand cmd = new SqlCommand("Insert into materia(descripcion)" +
-                                                " output INSERTED.idmateria" +
-                                                " Values(@descripcion)", clases.datamanager.ConexionSQL);
 
+
+                SqlCommand cmd = new SqlCommand("sp_save", CtrInscripcion.clases.datamanager.ConexionSQL);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+
+          
 
                 // Ponemos valores a los Parametros incluidos en la consulta de actualización
 
-                cmd.Parameters.AddWithValue("@descripcion", descripcion);
+              
 
 
                 // Ejecutamos consulta de Actualización
                 // y Retornamos el idColor Insertado.
-                idmateria = (int)cmd.ExecuteScalar();
+                idpersona = (int)cmd.ExecuteScalar();
+                cmd.Parameters.AddWithValue("@idpersona", idpersona);
+                cmd.Parameters.AddWithValue("@name", name);
+                cmd.Parameters.AddWithValue("@lastname", lastname);
+                cmd.Parameters.AddWithValue("@cedula", cedula);
+                cmd.Parameters.AddWithValue("@dateT", dateT);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@country", conutry);
+                cmd.Parameters.AddWithValue("@career", carreer);
+                cmd.ExecuteNonQuery();
 
                 // Cerramos conexión.
-           //  FormularioWEb.clases. datamanager.ConexionCerrar();
+                CtrInscripcion.clases.datamanager.ConexionCerrar();
 
             }
             // si no logra insertar nada el idempresa Retornado es Cero
-            return idmateria;
+            return idpersona;
         }
     }
 
