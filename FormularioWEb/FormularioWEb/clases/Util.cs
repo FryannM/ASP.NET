@@ -16,7 +16,7 @@ namespace FormularioWEb.clases
         public string name { get; set; }
         public string lastname { get; set; }
         public string cedula { get; set; }
-        public int dateT { get; set; }
+        public string dateT { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
         public string country { get; set; }
@@ -42,13 +42,13 @@ namespace FormularioWEb.clases
         {
           int  idpersona = 0;
 
-            if (CtrInscripcion.clases.datamanager.ConexionAbrir())
+            if (clases.datamanager.ConexionAbrir())
             {
 
                 // Preparamos consulta pra la actualización
 
 
-                SqlCommand cmd = new SqlCommand("sp_save", CtrInscripcion.clases.datamanager.ConexionSQL);
+                SqlCommand cmd = new SqlCommand("sp_save", clases.datamanager.ConexionSQL);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
 
@@ -74,7 +74,7 @@ namespace FormularioWEb.clases
                 cmd.ExecuteNonQuery();
 
                 // Cerramos conexión.
-                CtrInscripcion.clases.datamanager.ConexionCerrar();
+                clases.datamanager.ConexionCerrar();
 
             }
             // si no logra insertar nada el idempresa Retornado es Cero

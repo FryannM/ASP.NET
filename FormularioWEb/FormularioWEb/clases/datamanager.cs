@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Configuration;
 using System.Security.Cryptography;
 
-using System.Configuration;
+using System.Web.UI.WebControls;
+using System.Web.Configuration;
 
+using System.Web.Script;
 
-namespace CtrInscripcion.clases
-{   
-     public class datamanager
+namespace FormularioWEb.clases
+{
+    public class datamanager
     {
 
         public static string cadenadeconexion
         {
             get
             {
-                using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(FormularioWEb.clases.Helpercs.CnnVal("WebServer")))
-                    return ConfigurationManager.ConnectionStrings["WebServer"].ConnectionString;
+                return WebConfigurationManager.ConnectionStrings["WebServer"].ConnectionString;
             }
-
             private set { }
         }
 
@@ -44,7 +45,7 @@ namespace CtrInscripcion.clases
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
                 ret = false;
             }
             return ret;
@@ -61,7 +62,7 @@ namespace CtrInscripcion.clases
             }
             catch (Exception ex)
             {
-              //  MessageBox.Show(ex.Message);
+             //   MessageBox.Show(ex.Message);
                 ret = false;
             }
             return ret;
@@ -110,7 +111,7 @@ namespace CtrInscripcion.clases
                 }
                 catch (Exception ex)
                 {
-                   // MessageBox.Show(ex.Message);
+                  //  MessageBox.Show(ex.Message);
                     ds = null;
                 }
                 ConexionCerrar();

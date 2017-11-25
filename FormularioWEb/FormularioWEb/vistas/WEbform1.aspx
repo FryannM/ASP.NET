@@ -8,14 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario Login</title>
-     <%-- <script src="javascript/Validacion.js"></script>--%>
+     
+     
  
     <!-- CSS de Bootstrap -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css"> <!--Iconos--> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" >
     <link rel="stylesheet" href="../css/custom.css">
+    <%--<script src="../javascript/Validacion.js"></script>--%>
      
+          
       
     
   </head>
@@ -44,8 +47,7 @@
                         </div>
                     </div>
                     <div class="myform-bottom"> 
-                            <div class="form-group ml-3  ">
-                               
+                            <div class="form-group ml-3  "> 
                                 <asp:TextBox ID="nametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="name..." ></asp:TextBox>
 
                             </div>
@@ -105,9 +107,48 @@
                                 </label>
                             </div>
                              <hr />
-                          <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />
+                       
+                        <button type="submit" value="" onclick="Hola();" class="mybtn" >Check In</button>
+                         <%-- <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" OnClientClick="Validar" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />--%>
                         </div>
-                        <script type="text/javascript">
+
+                     <script type="text/javascript">
+
+                         function Hola() {
+
+                             // Expresion regular para  validar que el correo sea valido donde /\w+ = texto +@ el arroba
+                             // \w mas texto \. mas punto + [a-z] una letra comprendida desde la a hasta la z
+                             var expresion = /\w+@\w+\.+[a-z]/;
+                             var name = document.getElementById("nametxt").value;
+                             var Lastname = document.getElementById("lastnametxt").value;
+                             var cedula = document.getElementById("idtxt").value;
+                             var email = document.getElementById("emailtxt").value;
+                             var phone = document.getElementById("phonetxt").value;
+                             var arr = [name, Lastname, cedula, email];
+
+
+                           
+                           for (var i = 0; i < arr.length; i++)
+
+                                if (arr[i] == "") {
+                                   alert("All fields are required");
+                                     return false;
+                                 }
+                                 else if (isNaN(phone)) {
+                                     alert(" invalid number ");
+                                     return false;
+                                }
+
+                         //        else if (!expresion.test(email)) {
+                         //            alert("Invalid mail");
+                         //            return false;
+                         //        }
+
+                         //}
+                         }
+
+      </script>
+                       <%-- <script type="text/javascript">
                             function Validar() {
 
                                 // Expresion regular para  validar que el correo sea valido donde /\w+ = texto +@ el arroba
@@ -140,7 +181,16 @@
 
                                 alert("Guardados Correctamente!");
                             }
-                        </script>             
+                        </script>   
+                    
+                    <script>
+                            function MsgSuccessul() {
+                                alert("Todo bien!");
+                            }
+                            function MgsFail() {
+                                alert("Error");
+                            }
+                    </script>--%>
 
                 </div>
               </div>
@@ -167,10 +217,15 @@
     <!-- Enlazamos el js de Bootstrap, y otros plugins que usemos siempre al final antes de cerrar el body -->
      
     
-      <script src="js/jquery-3.2.1.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/boostrap.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
+          
+        
       </form>
+
+        <script src="../js/jquery-3.2.1.min.js"></script>
+      <script src="../js/popper.min.js"></script>
+      <script src ="../js/bootstrap.min.js"></script>
+      
+   
   </body>
 </html>
