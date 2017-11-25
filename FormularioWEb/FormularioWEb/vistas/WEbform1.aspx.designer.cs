@@ -76,13 +76,13 @@ namespace FormularioWEb {
         protected global::System.Web.UI.WebControls.TextBox phonetxt;
         
         /// <summary>
-        /// Control paislist.
+        /// Control conutry.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList paislist;
+        protected global::System.Web.UI.WebControls.DropDownList conutry;
         
         /// <summary>
         /// Control carreer.

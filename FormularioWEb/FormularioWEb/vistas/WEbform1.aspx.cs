@@ -20,13 +20,7 @@ namespace FormularioWEb
         {
 
         }
-        static public void DisplayMessage(Control page, string msg)
-        {
-            string myScript = String.Format("alert('{0}')", msg);
-
-            ScriptManager.RegisterStartupScript(page, page.GetType(), "Myscript", myScript, true);
-        }
-
+       
         protected void Button1_Click1(object sender, EventArgs e)
         {
             int id = 0;

@@ -55,32 +55,22 @@
                             
                             </div>
                             <div class="form-group">
-                        
-                            
+    
                                 <asp:TextBox ID="idtxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="id...."></asp:TextBox>            
                             
                             </div>
                             <div class="form-group">
-                              
-                                   
+       
                                 <asp:TextBox ID="datetxt"  type ="date" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>              
-                              
-                             
                             </div>
-                            <div class="form-group">
-
-                              
+                            <div class="form-group">       
                                 <asp:TextBox ID="emailtxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="email..."></asp:TextBox>
                             
                             </div>
-
                             <div class="form-group" >
                               
-                                <asp:TextBox ID="phonetxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>
-                            
+                                <asp:TextBox ID="phonetxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>   
                             </div>
-                        
-
                             <div class="col">   
                                 <asp:DropDownList ID="paislist" runat="server"  class="form-control">
                                    <asp:ListItem Text="Choose Contry" Value="SEL" />
@@ -89,7 +79,6 @@
                                      <asp:ListItem Text="United States" Value="United States" />
                                     <asp:ListItem Text="Swizeland" Value="Swizeland" />
                            
-
                                 </asp:DropDownList> 
      
                                     <div style="margin-top:15px"></div>
@@ -99,55 +88,38 @@
                                    <asp:ListItem Text="Choose Career" Value="SEL" />
                                      <asp:ListItem Text="Software Developer" Value="Software Developer" />
                                      <asp:ListItem Text="Networks" Value="Networks" />
-                                     <asp:ListItem Text="Data Base" Value="Data Bas" />
+                                     <asp:ListItem Text="Data Base" Value="Data Base" />
                                     <asp:ListItem Text="Full Stack Web Developer" Value="Full Stack Web Developer" />
-   
                                 </asp:DropDownList> 
-        
                                     </div>
                             <h4>Sexo </h4>
                             <hr />
                             <div class="form-check  form-check-inline ">
-
                                 <label class="Radio ">
                                     <input type="Radio" name="sexo" id="hombre" value="hombre" > Hombre
                                 </label>
                             </div>
                             <div class="form-check  form-check-inline ">
-
                                 <label class="Radio">
                                     <input type="Radio" name="sexo" id="mujer" value="mujer"> Mujer
                                 </label>
                             </div>
                              <hr />
-                         
                           <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />
-                         <%-- <button type="submit" value="" onclick="Validar()" class="mybtn" ></button>--%>
-
                         </div>
-                   
-                     
                         <script type="text/javascript">
-
-
                             function Validar() {
 
                                 // Expresion regular para  validar que el correo sea valido donde /\w+ = texto +@ el arroba
                                 // \w mas texto \. mas punto + [a-z] una letra comprendida desde la a hasta la z
                                 var expresion = /\w+@\w+\.+[a-z]/;
-
                                 var name = document.getElementById("name").value;
                                 var Lastname = document.getElementById("Lastname").value;
                                 var cedula = document.getElementById("cedula").value;
                                 var email = document.getElementById("email").value;
                                 var phone = document.getElementById("phone").value;
-
-
                                 var arr = [name, Lastname, cedula, email];
-
-
                                 for (var i = 0; i < arr.length; i++)
-
 
                                     if (arr[i] == "") {
                                         alert("All fields are required");
@@ -164,37 +136,11 @@
                                     }
 
                             }
+                            function MsgSuccessul() {
 
-
-                            function MsgSuccessul()
-                            {
-                                if (!alertify.myAlert) {
-                                    //define a new dialog
-                                    alertify.dialog('myAlert', function () {
-                                        return {
-                                            main: function (message) {
-                                                this.message = message;
-                                            },
-                                            setup: function () {
-                                                return {
-                                                    buttons: [{ text: "cool!", key: 27/*Esc*/ }],
-                                                    focus: { element: 0 }
-                                                };
-                                            },
-                                            prepare: function () {
-                                                this.setContent(this.message);
-                                            }
-                                        }
-                                    });
-                                }
-                                //launch it.
-                                alertify.myAlert("Saving Successully");
+                                alert("Guardados Correctamente!");
                             }
-                        </script>
-                     
-                       
-                          
-                           
+                        </script>             
 
                 </div>
               </div>
