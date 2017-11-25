@@ -72,7 +72,7 @@
                                 <asp:TextBox ID="phonetxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>   
                             </div>
                             <div class="col">   
-                                <asp:DropDownList ID="paislist" runat="server"  class="form-control">
+                                <asp:DropDownList ID="conutry" runat="server"  class="form-control">
                                    <asp:ListItem Text="Choose Contry" Value="SEL" />
                                      <asp:ListItem Text="Dominican Republic" Value="Dominican Republic" />
                                      <asp:ListItem Text="United Kingdom" Value="United Kingdom" />

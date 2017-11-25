@@ -38,23 +38,17 @@ namespace FormularioWEb
             cmd.Parameters.AddWithValue("@dateT", datetxt.Text.Trim());
             cmd.Parameters.AddWithValue("@email", emailtxt.Text.Trim());
             cmd.Parameters.AddWithValue("@phone", phonetxt.Text.Trim());
-            cmd.Parameters.AddWithValue("@country", paislist.Text.Trim());
+            cmd.Parameters.AddWithValue("@country", conutry.Text.Trim());
             cmd.Parameters.AddWithValue("@career", carreer.Text.Trim());
             cmd.ExecuteNonQuery();
 
             sqlCon.Close();
+            
             if (id !=0 )
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "MsgSuccessul()", true);
 
             }
-
-         
-
-
-
-
-
 
         }
     }

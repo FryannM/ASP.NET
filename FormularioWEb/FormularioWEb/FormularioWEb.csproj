@@ -102,6 +102,11 @@
     <Content Include="vistas\WEbform1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clases\datamanager.cs" />
+    <Compile Include="clases\Helpercs.cs" />
+    <Compile Include="clases\Util.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vistas\WEbform1.aspx.cs">
       <DependentUpon>WEbform1.aspx</DependentUpon>
