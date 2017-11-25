@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css"> <!--Iconos--> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" >
     <link rel="stylesheet" href="../css/custom.css">
-    <%--<script src="../javascript/Validacion.js"></script>--%>
+      <%--<script src="../javascript/Validacion.js"></script>--%>
      
           
       
@@ -108,8 +108,8 @@
                             </div>
                              <hr />
                        
-                        <button type="submit" value="" onclick="Hola();" class="mybtn" >Check In</button>
-                         <%-- <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" OnClientClick="Validar" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />--%>
+                     <%--   <button type="submit" value="" onclick="Hola();" class="mybtn" >Check In</button>--%>
+                      <asp:Button ID="savebtn" runat="server" OnClick="Button1_Click1" Text="Check In" class="mybtn" EnableViewState="False" ViewStateMode="Enabled" />
                         </div>
 
                      <script type="text/javascript">
@@ -148,7 +148,7 @@
                          }
 
       </script>
-                       <%-- <script type="text/javascript">
+                    <%-- <script type="text/javascript">
                             function Validar() {
 
                                 // Expresion regular para  validar que el correo sea valido donde /\w+ = texto +@ el arroba

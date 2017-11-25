@@ -114,6 +114,7 @@
     <Compile Include="clases\Util.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="entidades\dmpersona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="vistas\WEbform1.aspx.cs">
       <DependentUpon>WEbform1.aspx</DependentUpon>

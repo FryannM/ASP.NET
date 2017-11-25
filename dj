@@ -1,0 +1,59 @@
+[33mcommit 214d295e36b455ed63bc1fe5003ad1ce8f61b8c4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Sat Nov 25 13:59:53 2017 -0400
+
+    Validaciones con javaScript Completadas
+
+[33mcommit 1b8f1aa593beb233f56453354d9e5944bf6c4c65[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 23:48:56 2017 -0400
+
+    Agregando clases 2 todo funciona hasta ahora
+
+[33mcommit 29628e05f10cb6c342fc1f9102109334275bb9b0[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 23:27:21 2017 -0400
+
+    Agreando clase Datamanager
+
+[33mcommit 1fed561b6bd6c033ab1d3eeba26dc9015d94e240[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 23:12:47 2017 -0400
+
+    Agregando metodos nuevos
+
+[33mcommit bdb987cbee806c77839606a7bc7ccf5441f9a98d[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 21:12:51 2017 -0400
+
+    Bugs  DB Resueltos
+
+[33mcommit 9b1bdae1fd52b6d693a3f71bc84964822dbdddcd[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 20:46:25 2017 -0400
+
+    Conexion completa arreglando macos
+
+[33mcommit 19ddd0d94aabdb7cf99f139e9b86084ff513721e[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 19:02:34 2017 -0400
+
+    Repando los texBox
+
+[33mcommit 4e88c14a5b547430b1df343de823b5e69f6754d1[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Fri Nov 24 17:58:44 2017 -0400
+
+    Convirtiendo los input text en texbox
+
+[33mcommit dd41f3b38a2bf827adb8b8ab1e5fadeeba01c20e[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Thu Nov 23 23:22:52 2017 -0400
+
+    almost done with the conexion
+
+[33mcommit 2afc3b6321d543c11514dba96d5ae74887781b6b[m
+Author: Fryann Martinez <fryann14@hotmail.com>
+Date:   Thu Nov 23 20:38:19 2017 -0400
+
+    Inicio de Conexion
