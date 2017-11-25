@@ -44,69 +44,53 @@
                         </div>
                     </div>
                     <div class="myform-bottom"> 
-                            <div class="form-group ml-3" >
-                                   <div style="margin-right:60px">
-                                <asp:TextBox ID="nametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="name..."></asp:TextBox>
-                               </div>
-
+                            <div class="form-group ml-3  ">
+                                <%--   <div style="margin-right:60px">--%>
+                                <asp:TextBox ID="nametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="name..." ></asp:TextBox>
+                              <%-- </div>--%>
                               <%--  <input type="text"  name="form-firtsname"  placeholder="Name..."  class="form-control" id="name">--%>
-
-
                             </div>
-                            <div class="form-group ">
-
-                                  <div style="margin-right:60px">
-                                     
+                            <div class="form-group " style="margin-top:0px">
+                                 <%-- <div style="margin-right:60px">--%>     
                                 <asp:TextBox ID="lastnametxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="Lastname..."></asp:TextBox>
                                         
-                               </div>
-                              
-                              <%--  <input type="text" name="form-lastname" placeholder="Lastname..." class="form-control" id="Lastname">--%>
+                             <%--  </div>--%> 
                             </div>
                             <div class="form-group">
-                              <%--  <input type="text" name="form-cedula" placeholder="ced..." class="form-control" id="cedula">--%>
-                                <div style="margin-right:60px">
+                        
+                              <%--  <div style="margin-right:60px">--%>      
+                                <asp:TextBox ID="idtxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="id...."></asp:TextBox>            
+                             <%--  </div>--%>
+                            </div>
+                            <div class="form-group">
+                                <%--<div style="margin-right:60px">--%>
                                    
-                                <asp:TextBox ID="idtxt" runat="server" Width="512" Height ="50 " class="form-control " placeholder="id...."></asp:TextBox>
-                                        
-                               </div>
-                            </div>
-
-
-
-                            <div class="form-group">
-                               <%-- <input type="date" name="form-birthdate"  class="form-control" id="birthday-">--%>
+                                <asp:TextBox ID="datetxt"  type ="date" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>              
+                               <%--</div>--%>
+                             
                             </div>
                             <div class="form-group">
 
-                                  <div style="margin-right:60px">
-                                <asp:TextBox ID="TextBox3" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>
-                               </div>
-                               <%-- <input type="text" name="form-email" placeholder="Email..." class="form-control" id="email">--%>
+                               <%--   <div style="margin-right:60px">--%>
+                                <asp:TextBox ID="emailtxt" runat="server" Width="512" Height ="50 " class="form-control" placeholder="email..."></asp:TextBox>
+                              <%-- </div>--%>
                             </div>
 
-                            <div class="form-group">
-
-                                  <div style="margin-right:60px">
-                                <asp:TextBox ID="TextBox4" runat="server" Width="512" Height ="50 " class="form-control"></asp:TextBox>
-                               </div>
-                               <%-- <input type="text" name="form-tel" placeholder="phone number..." class="form-control" id="phone"--%>
+                            <div class="form-group" >
+                                <%--  <div style="margin-right:60px">--%>
+                                <asp:TextBox ID="TextBox4" runat="server" Width="512" Height ="50 " class="form-control" placeholder="phone number..."></asp:TextBox>
+                               <%--</div>--%>
                             </div>
-                            <div class="col">
-
-                              
+                            <div class="col">     
                                     <select name="pais" id="pais" class="form-control  ">
                                         <option value="SEL">Choose Contry</option>
                                         <option value="DR">Dominican Republic</option>
                                         <option value="UK">United Kingdom</option>
                                         <option value="US">United States</option>
                                         <option value="SW">Swizeland </option>
-                                        
-                                       
-
+  
                                     </select>
                                     <div style="margin-top:15px"></div>
-
 
                                     <select name="profesion" id="profesion" class="form-control mt-3">
                                         <option value="none">Choose Career</option>
@@ -133,7 +117,6 @@
                             </div>
                              <hr />
                         </div>
-
                      <%--   <script type  ="text/javascript">
                             function Mifucion() {
                                 alert("Probando esta mierda");

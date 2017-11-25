@@ -36,9 +36,16 @@ namespace FormularioWEb
 
             SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-           // cmd.Parameters.AddWithValue("@idpersona",hfidpersona.Value);
-           // cmd.Parameters.("@name",GetType(),"","Name",true);
-  
+            // cmd.Parameters.AddWithValue("@idpersona",hfidpersona.Value);
+            cmd.Parameters.AddWithValue("@name",nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@lastname", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@date", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@email", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@phone", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@country", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@career", nametxt.Text.Trim());
+
+
 
 
             ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "Validar()", true);
