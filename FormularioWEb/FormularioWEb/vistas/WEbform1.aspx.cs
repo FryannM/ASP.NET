@@ -14,18 +14,21 @@ namespace FormularioWEb
     public partial class WebForm1 : System.Web.UI.Page
 
     {
-       
-       // private entidade.dmpersona registro { get; set; }
+      
+       private FormularioWEb.dmpersona registro { get; set; }
 
-        //SqlConnection sqlCon =  new SqlConnection(@"Data Source=FRYANNM\SQLEXPRESS;Initial Catalog=WebServer;Integrated Security=True");
+        SqlConnection sqlCon =  new SqlConnection(@"Data Source=FRYANNM\SQLEXPRESS;Initial Catalog=WebServer;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
-        {
+        { 
+           
 
         }
-       
+
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            ScriptManager.RegisterStartupScript(this, GetType(), "Validar", "Hola()", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "Validar", "Hola();", true);
+            //  ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "MsgSuccessul()", true);
+
 
             //registro.name = nametxt.Text.Trim();
             //registro.lastname = lastnametxt.Text.Trim();
@@ -35,8 +38,6 @@ namespace FormularioWEb
             //registro.phone = phonetxt.Text.Trim();
             //registro.country = conutry.Text.Trim();
             //registro.career = carreer.Text.Trim();
-
-
             //bool lret = registro.crearDatos() > 0;
 
             //if (lret)
@@ -48,36 +49,32 @@ namespace FormularioWEb
             //    ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "MgsFail()", true);
             //}
 
+            int id = 0;
+            if (sqlCon.State == System.Data.ConnectionState.Closed)
+              sqlCon.Open();
 
 
+           SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
+           
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            //int id = 0;
-            //if (sqlCon.State == System.Data.ConnectionState.Closed)
-            //    sqlCon.Open();
+            cmd.Parameters.AddWithValue("@idpersona", id);
+            cmd.Parameters.AddWithValue("@name", nametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@lastname", lastnametxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@cedula", idtxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@dateT", datetxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@email", emailtxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@phone", phonetxt.Text.Trim());
+            cmd.Parameters.AddWithValue("@country", conutry.Text.Trim());
+            cmd.Parameters.AddWithValue("@career", carreer.Text.Trim());
+            cmd.ExecuteNonQuery();
 
+            sqlCon.Close();
 
-            //SqlCommand cmd = new SqlCommand("sp_save", sqlCon);
-            //cmd.CommandType = System.Data.CommandType.StoredProcedure;
-
-            //cmd.Parameters.AddWithValue("@idpersona",id);
-            //cmd.Parameters.AddWithValue("@name", nametxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@lastname", lastnametxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@cedula", idtxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@dateT", datetxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@email", emailtxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@phone", phonetxt.Text.Trim());
-            //cmd.Parameters.AddWithValue("@country", conutry.Text.Trim());
-            //cmd.Parameters.AddWithValue("@career", carreer.Text.Trim());
-            //cmd.ExecuteNonQuery();
-
-            //sqlCon.Close();
-
-            //if (id !=0 )
+            //if (id != 0)
             //{
             //    ScriptManager.RegisterStartupScript(this, GetType(), "Validacion", "MsgSuccessul()", true);
-
             //}
-
         }
     }
 }

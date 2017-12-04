@@ -84,7 +84,9 @@
     <None Include="vistas\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -111,6 +113,7 @@
   <ItemGroup>
     <Compile Include="clases\datamanager.cs" />
     <Compile Include="clases\Helpercs.cs" />
+    <Compile Include="clases\PruebaConexion.cs" />
     <Compile Include="clases\Util.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
